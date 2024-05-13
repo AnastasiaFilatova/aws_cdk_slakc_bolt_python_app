@@ -2,9 +2,32 @@
 package-lock.json
 __pycache__
 .pytest_cache
-.venv
 *.egg-info
+
+# Environment
+.venv
+.env
+
+# Pyhton packages for lambda layer
+*python/*
+*.zip
+
 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+
+# VScode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
