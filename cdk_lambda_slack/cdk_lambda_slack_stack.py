@@ -32,10 +32,11 @@ class CdkLambdaSlackStack(Stack):
             self, "Endpoint",
             handler=lambda_fn,
             description="API Gateway for Slack bot",
+            proxy=False
         )
 
         # Define /slack/events resource path
-        #slack_events_resource = api.root.add_resource("slack").add_resource("events")
+        slack_events_resource = api.root.add_resource("slack").add_resource("events")
 
         # Add POST method to /slack/events
-        #slack_events_resource.add_method("POST", integration=apigw.LambdaIntegration(lambda_fn)) 
+        slack_events_resource.add_method("POST", integration=apigw.LambdaIntegration(lambda_fn)) 
